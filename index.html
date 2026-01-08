@@ -1,0 +1,196 @@
+
+            <html>
+            <head>
+            <meta http-equiv="refresh" content="5">
+            <title>Portfolio</title>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Portfolio Dashboard</title>
+            <style>
+                body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f5f7fa;
+                color: #333;
+                }
+
+                header {
+                background: #2d3436;
+                color: #fff;
+                padding: 15px;
+                text-align: center;
+                font-size: 1.5rem;
+                }
+
+                .dashboard {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                }
+
+                .card {
+                background: #fff;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                text-align: center;
+                transition: transform 0.2s ease-in-out;
+                }
+
+                .card:hover {
+                transform: translateY(-5px);
+                }
+
+                .card img {
+                width: 75px;
+                height: 75px;
+                margin-bottom: 10px;
+                }
+
+                .title {
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+                }
+
+                .value {
+                font-size: 1.5rem;
+                color: #0984e3;
+                }
+
+                .positive {
+                color: #00b894;
+                }
+
+                .negative {
+                color: #d63031;
+                }
+
+                table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.9rem;
+                }
+
+                table th, table td {
+                padding: 6px 8px;
+                text-align: center;
+                }
+
+                table th {
+                background: #f1f2f6;
+                font-weight: bold;
+                }
+
+                .buy {
+                color: #00b894;
+                font-weight: bold;
+                }
+
+                .sell {
+                color: #d63031;
+                font-weight: bold;
+                }
+            </style>
+            </head>
+            <body>
+            <div class="dashboard">
+        
+                <div class="card">
+                <img src="https://www.shutterstock.com/image-vector/bitcoin-icon-sign-payment-symbol-600nw-1938997753.jpg" alt="Current Price">
+                <div class="title">Current Price</div>
+        
+            <div class="value" id="vol-1-h">₹82,95,359</div>
+        
+            </div>
+            <div class="card">
+            <img src="https://www.shutterstock.com/image-vector/1-hour-clock-icon-vector-260nw-2302434205.jpg" alt="1 Hour">
+            <div class="title">1H Volume</div>
+        
+            <div class="value" id="vol-1-h">₹52,775</div>
+        
+            </div>
+            <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgxPkLvLr2bB8by3p8l3oIR5cesJ77S4phow&s" alt="1 Month">
+            <div class="title">30D Volume</div>
+        
+            <div class="value" id="vol-30-d">₹10,09,777</div>
+            </div>
+        
+            <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10771/10771391.png" alt="Lowest">
+                    <div class="title">Fees</div>
+                    <div class="value" id="fees">0.003%</div>
+                </div>
+        
+            
+            <div class="card">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-tds-icon-svg-png-download-1538212.png" alt="Total TDS">
+            <div class="title">Total TDS</div>
+        
+            <div class="value" id="tds-total">₹2,03,323</div>
+            <div class="value" id="tds-total">₹2,03,112</div>
+            </div>
+        
+            <div class="card">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-tds-icon-svg-png-download-1538212.png" alt="24 Hour TDS">
+            <div class="title">14D TDS</div>
+            <div class="value" id="tds-24-h">₹5,038</div>
+            </div>
+        
+            <div class="card">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-tds-icon-svg-png-download-1538212.png" alt="1 Month TDS">
+            <div class="title">1M TDS</div>
+            <div class="value" id="tds-1-m">₹5,038</div>
+            </div>
+        
+            <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Sats">
+            <div class="title">Reserve Sats</div>
+            <div class="value" id="reserve">8,556.66</div>
+            <div class="value" id="reserve-price">₹709.81</div>
+            </div>
+        
+            <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/low-price-bitcoin-icon-isolated-low-price-bitcoin-346991232.jpg" alt="Lowest">
+                    <div class="title">Lowest Buy</div>
+                    <div class="value" id="lowest-buy">₹80,99,000 (70.55%)</div>
+                </div>
+        
+            <div class="card">
+                    <img src="https://www.shutterstock.com/image-vector/profit-loss-icon-trendy-flat-260nw-1811004328.jpg" alt="PNL">
+                    <div class="title">PNL</div>
+                    <div class="value" id="profit">₹2,88,133</div>
+                </div>
+        
+            <div class="card">
+                    <div class="title">Orders</div>
+                    <table>
+                    <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Price</th>
+                        <th>Side</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orders-body">
+        <tr><td class="title">11:13:21</td><td class="title">8271200</td><td class="buy">buy</td></tr><tr><td class="title">11:13:21</td><td class="title">8269100</td><td class="buy">buy</td></tr><tr><td class="title">11:13:07</td><td class="title">8302741</td><td class="sell">sell</td></tr><tr><td class="title">11:13:07</td><td class="title">8304848</td><td class="sell">sell</td></tr><tr><td class="title">11:13:07</td><td class="title">8300634</td><td class="sell">sell</td></tr>
+                    </tbody>
+                </table>
+                </div>
+        
+            <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiaRL_ColqSIPDHvgPgdw1DBr9nbyjFLbFtQ&s" alt="Total INR">
+            <div class="title">Total INR</div>
+            <div class="value" id="total-inr">₹1,97,218</div>
+            </div>
+        
+            </div>
+            </body>
+            </html>
+        
